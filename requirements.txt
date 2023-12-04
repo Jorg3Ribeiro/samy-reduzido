@@ -1,0 +1,7 @@
+sumy
+pyarabic
+tinysegmenter
+jieba
+konlpy
+hebrew_tokenizer
+greek-stemmer-pos
