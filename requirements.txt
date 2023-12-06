@@ -7,3 +7,4 @@ hebrew_tokenizer
 greek-stemmer-pos
 uvicorn
 fastapi
+gradio 
