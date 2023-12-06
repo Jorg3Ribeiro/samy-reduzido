@@ -9,7 +9,12 @@ import gradio as gr
 import nltk
 nltk.download('punkt')
 
+import uvicorn
+from fastapi import FastAPI
 
+app = FastAPI()
+
+@app.post("/summarize")
 def summarize(method, language, sentence_count, input_type, input_):
   if method== 'LSA':
     from sumy.summarizers.lsa import LsaSummarizer as Summarizer
@@ -49,27 +54,6 @@ def summarize(method, language, sentence_count, input_type, input_):
   
   return summary
 
-title = "espaço de biblioteca sumy para resumo automático de texton"
+if __name__ = "__main__"
+  uvicorn.run(app, port=8000, host="0.0.0.0")
 
-methods = ["LSA", "luhn", "edmundson", "text-rank", "lex-rank", "random", "reduction", "kl-sum"]
-
-supported_languages = ["english", "french", "arabic", "chinese", "czech", "german", "italian", "hebrew", 
-                        "japanese", "portuguese", "slovak", "spanish", "ukrainian", "greek"]
-
-iface = gr.Interface(
-    summarize,    
-    [
-      gr.inputs.Dropdown(methods),
-      gr.inputs.Dropdown(supported_languages),
-      gr.inputs.Number(default=5),
-      gr.inputs.Radio(["URL", "text"], default="URL"),
-      gr.inputs.Textbox(5),
-    ],
-    "text",
-    title=title,
-    examples=[
-        ["luhn", 'english', 2, "URL", "https://en.wikipedia.org/wiki/Automatic_summarization"]
-    ],
-)
-
-iface.launch()
