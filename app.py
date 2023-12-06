@@ -54,6 +54,6 @@ def summarize(method, language, sentence_count, input_type, input_):
   
   return summary
 
-if __name__ == "__main__"
-  uvicorn.run(app, port=8000, host="0.0.0.0")
+if __name__ == "__main__":
+  uvicorn.run(app, port=8888, host="0.0.0.0")
 
