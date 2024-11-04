@@ -1,8 +1,8 @@
-from sumy.parsers.plaintext import PlaintextParser
-from sumy.parsers.html import HtmlParser
-from sumy.nlp.tokenizers import Tokenizer
-from sumy.nlp.stemmers import Stemmer
-from sumy.utils import get_stop_words
+from sumy.parsers.plaintext import PlaintextParser # type: ignore
+from sumy.parsers.html import HtmlParser # type: ignore
+from sumy.nlp.tokenizers import Tokenizer # type: ignore
+from sumy.nlp.stemmers import Stemmer # type: ignore
+from sumy.utils import get_stop_words # type: ignore
 
 import gradio as gr
 
@@ -16,10 +16,10 @@ from pydantic import BaseModel
 app = FastAPI()
 
 class Data(BaseModel):
-    method: str, 
-    language: str, 
-    sentence_count: int, 
-    input_type: str, 
+    method: str
+    language: str 
+    sentence_count: int 
+    input_type: str
     input_: str
 
 @app.post("/summarize")
