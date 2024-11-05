@@ -1,4 +1,5 @@
 sumy
+nltk
 pyarabic
 tinysegmenter
 jieba
