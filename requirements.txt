@@ -1,5 +1,5 @@
 sumy
-nltk
+nltk==3.8.1
 pyarabic
 tinysegmenter
 jieba
